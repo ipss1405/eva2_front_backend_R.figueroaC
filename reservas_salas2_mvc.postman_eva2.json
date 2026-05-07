@@ -1,0 +1,761 @@
+{
+  "info": {
+    "_postman_id": "ff9ed96b-a2d1-4aad-aaa3-6a9771fd18e8",
+    "name": "reservas_salas2_mvc",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51406264",
+    "_collection_link": "https://go.postman.co/collection/51406264-ff9ed96b-a2d1-4aad-aaa3-6a9771fd18e8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Auth - Login correcto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkByZXNlcnZhcy5jbCIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzc4MDc5NjIxLCJleHAiOjE3NzgwODMyMjF9.4UP-PhkUVBsklGxxBdThJOUB21guPJMy9YWs41xeMaE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@reservas.cl\",\r\n  \"password\": \"admin123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 - Auth - Login incorrecto",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@reservas.cl\",\r\n  \"password\": \"mala123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 - Auth - Perfil con token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkByZXNlcnZhcy5jbCIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzc3NjM4MzU2LCJleHAiOjE3Nzc2NDE5NTZ9.i6V95ozU8JVkd_M3EW8XVllMhGfxhLwQjGLLuLnfvEI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/perfil",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "perfil"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 - Usuarios - Listar",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkByZXNlcnZhcy5jbCIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzc3NjM4MzU2LCJleHAiOjE3Nzc2NDE5NTZ9.i6V95ozU8JVkd_M3EW8XVllMhGfxhLwQjGLLuLnfvEI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": " 05 - Usuarios - Crear",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkByZXNlcnZhcy5jbCIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzc3NjM4MzU2LCJleHAiOjE3Nzc2NDE5NTZ9.i6V95ozU8JVkd_M3EW8XVllMhGfxhLwQjGLLuLnfvEI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Funcionario Prueba\",\r\n  \"email\": \"funcionario@reservas.cl\",\r\n  \"password\": \"funcionario123\",\r\n  \"rol\": \"usuario\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "06 - Usuarios - Correo duplicado",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkByZXNlcnZhcy5jbCIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzc3NjQyMjYwLCJleHAiOjE3Nzc2NDU4NjB9.-RCCWmBU_r-5fLPP97RXBan-IUJJSbOZP_2dY3",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Funcionario Prueba\",\r\n  \"email\": \"funcionario@reservas.cl\",\r\n  \"password\": \"funcionario123\",\r\n  \"rol\": \"usuario\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "07 - Usuarios - Actualizar",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Funcionario Prueba Actualizado\",\r\n  \"email\": \"funcionario.actualizado@reservas.cl\",\r\n  \"password\": \"funcionario456\",\r\n  \"rol\": \"usuario\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/usuarios/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "usuarios",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08 - Usuarios - Cambiar estado",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"estado\": \"inactivo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/usuarios/3/estado",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "usuarios",
+            "3",
+            "estado"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "09 - Usuarios - Eliminar lógico",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/usuarios/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "usuarios",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 - Salas - Listar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "11 - Salas - Crear",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Sala Innovación C\",\r\n  \"capacidad\": 15,\r\n  \"ubicacion\": \"Tercer piso\",\r\n  \"estado\": \"disponible\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/salas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "12 - Salas - Actualizar",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Sala Innovación C Actualizada\",\r\n  \"capacidad\": 20,\r\n  \"ubicacion\": \"Tercer piso - Ala Norte\",\r\n  \"estado\": \"disponible\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/salas/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salas",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "13 - Salas - Cambiar estado",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"estado\": \"mantencion\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/salas/5/estado",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salas",
+            "5",
+            "estado"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "14 - Salas - Eliminar lógico",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salas/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salas",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "15 - Reservas - Listar ok",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/reservas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "16 - Reservas - Crear.ok",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuario_id\": 2,\r\n  \"sala_id\": 1,\r\n  \"fecha\": \"2026-05-15\",\r\n  \"hora_inicio\": \"10:00\",\r\n  \"hora_fin\": \"11:00\",\r\n  \"observacion\": \"Reserva creada desde Postman\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reservas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "17 - Reservas - Horario ocupado",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuario_id\": 2,\r\n  \"sala_id\": 1,\r\n  \"fecha\": \"2026-05-07\",\r\n  \"hora_inicio\": \"10:30\",\r\n  \"hora_fin\": \"11:30\",\r\n  \"observacion\": \"Intento de reserva con horario ocupado\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reservas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "18 - Reservas - Fuera de horario",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuario_id\": 2,\r\n  \"sala_id\": 1,\r\n  \"fecha\": \"2026-05-08\",\r\n  \"hora_inicio\": \"19:00\",\r\n  \"hora_fin\": \"20:00\",\r\n  \"observacion\": \"Intento fuera de horario permitido\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reservas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "19 - Reservas - Actualizar.ok",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuario_id\": 2,\r\n  \"sala_id\": 1,\r\n  \"fecha\": \"2026-05-07\",\r\n  \"hora_inicio\": \"12:00\",\r\n  \"hora_fin\": \"13:00\",\r\n  \"estado\": \"confirmada\",\r\n  \"observacion\": \"Reserva actualizada desde Postman\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reservas/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "20 - Reservas - Cambiar estado",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"estado\": \"finalizada\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reservas/4/estado",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas",
+            "4",
+            "estado"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "21 - Reservas - Cancelar",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/reservas/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "22 - Disponibilidad",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/reservas/disponibilidad?sala_id=1&fecha=2026-05-07&hora_inicio=12:00&hora_fin=13:00",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas",
+            "disponibilidad"
+          ],
+          "query": [
+            {
+              "key": "sala_id",
+              "value": "1"
+            },
+            {
+              "key": "fecha",
+              "value": "2026-05-07"
+            },
+            {
+              "key": "hora_inicio",
+              "value": "12:00"
+            },
+            {
+              "key": "hora_fin",
+              "value": "13:00"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "23 - Reservas - Disponibilidad ocupada",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/reservas/disponibilidad?sala_id=1&fecha=2026-05-05&hora_inicio=09:30&hora_fin=10:30",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "reservas",
+            "disponibilidad"
+          ],
+          "query": [
+            {
+              "key": "sala_id",
+              "value": "1"
+            },
+            {
+              "key": "fecha",
+              "value": "2026-05-05"
+            },
+            {
+              "key": "hora_inicio",
+              "value": "09:30"
+            },
+            {
+              "key": "hora_fin",
+              "value": "10:30"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkByZXNlcnZhcy5jbCIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzc4MDg0MDg5LCJleHAiOjE3NzgwODc2ODl9.VJyHvt_3NFkyjqQHQfroxc0NFomdUo71NASbzdjg3Q4",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
